@@ -837,3 +837,114 @@ button:focus,
         margin-bottom: 1rem;
     }
 }
+
+/* 🌙 Dark Mode */
+#theme-switch:checked ~ .theme-wrapper {
+    --primary-color: #60a5fa;
+    --primary-dark: #3b82f6;
+    --secondary-color: #94a3b8;
+    --accent-color: #fbbf24;
+    --text-dark: #f1f5f9;
+    --text-light: #cbd5e1;
+    --bg-light: #1e293b;
+    --bg-white: #0f172a;
+    --border-color: #334155;
+    --shadow-sm: 0 1px 2px 0 rgb(255 255 255 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(255 255 255 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(255 255 255 / 0.2);
+}
+
+
+/* 🌙 Dark Mode Toggle Styles */
+#theme-switch {
+    display: none;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 1100;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+/* Icon swap: Sun ☀️ when in dark mode */
+#theme-switch:not(:checked) + .theme-toggle::before {
+    content: "🌙";
+}
+#theme-switch:checked + .theme-toggle::before {
+    content: "☀️";
+}
+
+/* Global dark mode text colors */
+body.dark-mode {
+    color: #E4E6EB; /* light gray for readability */
+    background-color: #0F172A; /* deep navy background */
+  }
+  
+  /* Headings */
+  body.dark-mode h1,
+  body.dark-mode h2,
+  body.dark-mode h3,
+  body.dark-mode h4 {
+    color: #FFFFFF; /* bright white for titles */
+  }
+  
+  /* Subheadings and smaller text */
+  body.dark-mode p,
+  body.dark-mode span,
+  body.dark-mode li {
+    color: #B0B3B8; /* medium-light gray */
+  }
+  
+  /* Navigation links */
+  body.dark-mode nav a {
+    color: #E4E6EB;
+  }
+  body.dark-mode nav a:hover {
+    color: #60A5FA; /* light blue hover */
+  }
+  
+  /* Cards (Education, Experience, Projects) */
+  body.dark-mode .card {
+    background: #1E293B; /* dark slate */
+    color: #E4E6EB;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    border: 1px solid #334155;
+  }
+  body.dark-mode .card h3 {
+    color: #FFFFFF;
+  }
+  body.dark-mode .card p {
+    color: #D1D5DB; /* lighter gray for content */
+  }
+  
+  /* Buttons */
+  body.dark-mode .btn-primary {
+    background: #2563EB;
+    color: #FFFFFF;
+  }
+  body.dark-mode .btn-primary:hover {
+    background: #1D4ED8;
+  }
+  body.dark-mode .btn-secondary {
+    background: transparent;
+    border: 1px solid #60A5FA;
+    color: #60A5FA;
+  }
+  body.dark-mode .btn-secondary:hover {
+    background: #1E40AF;
+    color: #FFFFFF;
+  }
+  
